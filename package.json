@@ -44,7 +44,10 @@
     "requires": {
       "cosmos": {
         "kind": "odata",
-        "model": "srv/external/cosmos"
+        "model": "srv/external/cosmos",
+        "credentials": {
+          "destination": "AzCosmosDB"
+        }
       }
     }
   }
