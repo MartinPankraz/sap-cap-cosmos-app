@@ -1,49 +1,65 @@
-## Generated mta.yaml based on template version 0.4.0
-## appName = cap-cosmosdb-app
-## language=nodejs; multitenant=false
-## approuter=
-_schema-version: '3.1'
+_schema-version: "3.1"
 ID: cap-cosmosdb-app
+description: A simple CAP project.
 version: 1.0.0
-description: "A simple CAP project."
+modules:
+- name: cap-cosmosdb-app-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: cap-cosmosdb-app-destination
+  - name: cap-cosmosdb-app-uaa
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+- name: cap-cosmosdb-app-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: cap-cosmosdb-app-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - capui.zip
+      name: capui
+      target-path: resources/
+- name: capui
+  type: html5
+  path: app/cap-ui
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: cap-cosmosdb-app-destination
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: cap-cosmosdb-app-destination
+- name: cap-cosmosdb-app-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
+- name: cap-cosmosdb-app-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: cap-cosmosdb-app-html5-srv
+    service-plan: app-host
 parameters:
+  deploy_mode: html5-repo
   enable-parallel-deployments: true
-   
 build-parameters:
   before-all:
-   - builder: custom
-     commands:
-      - npm install --production
-      - npx -p @sap/cds-dk cds build --production
-
-modules:
- # --------------------- SERVER MODULE ------------------------
- - name: cap-cosmosdb-app-srv
- # ------------------------------------------------------------
-   type: nodejs
-   path: gen/srv
-   provides:
-    - name: srv-api      # required by consumers of CAP services (e.g. approuter)
-      properties:
-        srv-url: ${default-url}
-   requires:
-     - name: cap-cosmosdb-app-destination
-     - name: cap-cosmosdb-app-uaa
-
-resources:
- - name: cap-cosmosdb-app-destination
-   type: org.cloudfoundry.existing-service
-   parameters:
-     service-name: cap-cosmosdb-app-destination
-
- - name: cap-cosmosdb-app-uaa
-   type: org.cloudfoundry.managed-service
-   parameters:
-     path: ./xs-security.json
-     service: xsuaa
-     service-plan: application  
-
-
-
-
-
+  - builder: custom
+    commands:
+    - npm install --production
+    - npx -p @sap/cds-dk cds build --production

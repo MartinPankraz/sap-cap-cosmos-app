@@ -1,0 +1,95 @@
+<mvc:View
+	controllerName="capui.controller.Object"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+
+		<semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false"
+		busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}">
+
+		<semantic:titleHeading>
+			<Title text="ID {id}" />
+		</semantic:titleHeading>
+
+		<semantic:headerContent>
+			<ObjectNumber
+				number="{
+					path: 'seatsmax',
+					formatter: '.formatter.numberUnit'
+				}"
+			/>
+		</semantic:headerContent>
+
+        <semantic:content>
+			<List
+                id="ShortProductList"
+                headerText="Attributes">
+                <items>
+                    <InputListItem
+                        label="Carrier ID">
+                        <Input
+                            id="item_carrid"
+                            placeholder="Carrier ID"
+                            value="{carrid}"
+                            enabled="false"/>
+                    </InputListItem>
+                    <InputListItem
+                        label="Connection ID">
+                        <Input
+                            id="item_connid"
+                            placeholder="Connection ID"
+                            value="{connid}"
+                            enabled="false"/>
+                    </InputListItem>
+                    <InputListItem
+                        label="Flight Date">
+                        <Input
+                            id="item_fldate"
+                            placeholder="Flight Date"
+                            value="{fldate}"
+                            enabled="false"/>
+                    </InputListItem>
+                    <InputListItem
+                        label="Plane Type">
+                        <Input
+                            id="item_planetype"
+                            placeholder="Plane Type"
+                            value="{planetype}"
+                            enabled="false"/>
+                    </InputListItem>
+                    <InputListItem
+                        label="Seats Max">
+                        <Input
+                            id="item_seatsmax"
+                            placeholder="Seats Max"
+                            value="{seatsmax}"
+                            enabled="false"/>
+                    </InputListItem>
+                    <InputListItem
+                        label="Seats Occupied">
+                        <Input
+                            id="item_seatsocc"
+                            placeholder="Seats Occupied"
+                            value="{seatsocc}"
+                            enabled="false"/>
+                    </InputListItem>
+                </items>
+            </List>
+		</semantic:content>
+
+        <semantic:editAction>
+			<semantic:EditAction press="onEdit" />
+		</semantic:editAction>
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+
+	</semantic:SemanticPage>
+
+</mvc:View>
