@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:DataServices>
+        <Schema Namespace="GenericODataWebAPI" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityType Name="Sflight">
+                <Key>
+                    <PropertyRef Name="id" />
+                </Key>
+                <Property Name="id" Type="Edm.String" Nullable="false" />
+                <Property Name="carrid" Type="Edm.String" />
+                <Property Name="connid" Type="Edm.String" />
+                <Property Name="fldate" Type="Edm.String" />
+                <Property Name="planetype" Type="Edm.String" />
+                <Property Name="seatsmax" Type="Edm.Int32" />
+                <Property Name="seatsocc" Type="Edm.Int32" />
+            </EntityType>
+        </Schema>
+        <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="Container">
+                <EntitySet Name="Sflight" EntityType="GenericODataWebAPI.Sflight" />
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

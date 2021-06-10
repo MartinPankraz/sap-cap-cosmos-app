@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "creator": "edmx2csn 1.0.41"
+  },
+  "$version": "0.2",
+  "definitions": {
+    "cosmos.Sflight": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "id": {
+          "key": true,
+          "type": "cds.LargeString"
+        },
+        "carrid": {
+          "type": "cds.LargeString"
+        },
+        "connid": {
+          "type": "cds.LargeString"
+        },
+        "fldate": {
+          "type": "cds.LargeString"
+        },
+        "planetype": {
+          "type": "cds.LargeString"
+        },
+        "seatsmax": {
+          "type": "cds.Integer"
+        },
+        "seatsocc": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "cosmos": {
+      "kind": "service"
+    }
+  }
+}
