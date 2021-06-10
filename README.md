@@ -5,9 +5,7 @@ Find the related blog post on the SAP community [here]().
 
 Find the related GitHub repos for the OData shim on Azure [here](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim).
 
-<br><br>
-<img src="img/geode-pattern.png" alt="architecture" width="700"/>
-<br><br>
+![architecture](img/geode-pattern.png)
 
 ## How to run
 From your IDE run `cds watch`
