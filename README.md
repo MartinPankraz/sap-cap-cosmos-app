@@ -5,6 +5,14 @@ Find the related blog post on the SAP community [here](https://blogs.sap.com/202
 
 Find the related GitHub repos for the OData shim on Azure [here](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim).
 
+Additional Resources |
+--- |
+[blog on the SAP community](https://blogs.sap.com/2021/06/11/sap-where-can-i-get-toilet-paper-an-implementation-of-the-geodes-pattern-with-s4-btp-and-azure-cosmosdb/) |
+[OData web api project](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim) |
+[SAPUI5 freestyle client](https://github.com/MartinPankraz/SAPUI5-CosmosDB-umbrella) |
+[CI/CD pipelines on AzDevOps](https://dev.azure.com/mapankra/CosmosDB%20OData%20SAP%20umbrella) |
+<br>
+
 ![architecture](img/geode-pattern.png)
 
 ## How to run
