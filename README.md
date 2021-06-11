@@ -1,7 +1,7 @@
 # sap-cap-cosmos-app (Prototype)
 SAP Cloud Application Programming (CAP) model implementation of Azure CosmosDB OData shim integration. The cds service serves as proxy to the CloudFoundry destination and ultimately the OData services exposed by the .NET web api running in Azure, which collects data from Azure CosmosDB. The SAPUI5 part of the application is identical to the non-cap implementation [here](https://github.com/MartinPankraz/SAPUI5-CosmosDB-umbrella).
 
-Find the related blog post on the SAP community [here]().
+Find the related blog post on the SAP community [here](https://blogs.sap.com/2021/06/11/sap-where-can-i-get-toilet-paper-an-implementation-of-the-geodes-pattern-with-s4-btp-and-azure-cosmosdb/).
 
 Find the related GitHub repos for the OData shim on Azure [here](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim).
 
