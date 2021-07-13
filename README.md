@@ -1,4 +1,4 @@
-# sap-cap-cosmos-app (Prototype)
+# sap-cap-cosmos-app
 SAP Cloud Application Programming (CAP) model implementation of Azure CosmosDB OData shim integration. The cds service serves as proxy to the CloudFoundry destination and ultimately the OData services exposed by the .NET web api running in Azure, which collects data from Azure CosmosDB. The SAPUI5 part of the application is identical to the non-cap implementation [here](https://github.com/MartinPankraz/SAPUI5-CosmosDB-umbrella).
 
 Additional Resources |
@@ -12,7 +12,10 @@ Additional Resources |
 ![architecture](img/geode-pattern.png)
 
 ## How to run
-From your IDE run `cds watch`
+From your IDE run `cds watch` (consider default-env.json when using CF destination)
+
+## How to debug
+Create Run configuration on SAP BAS and execute or use process attach on VSC. I found [this](https://developers.sap.com/tutorials/appstudio-cap-app.html#61399eba-7ffb-4764-b8bd-4e6036c18e19) link useful.
 
 ## How to deploy
 Login with your CloudFoundry space, run
