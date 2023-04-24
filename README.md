@@ -1,5 +1,5 @@
 # sap-cap-cosmos-app
-SAP Cloud Application Programming (CAP) model implementation of Azure CosmosDB OData proxy integration. The cds service serves as proxy to the CloudFoundry destination and ultimately the OData services exposed by the .NET web api running in Azure, which collects data from Azure CosmosDB. The SAPUI5 part of the application is identical to the non-cap implementation [here](https://github.com/MartinPankraz/SAPUI5-CosmosDB-umbrella).
+SAP [Cloud Application Programming](https://cap.cloud.sap/docs/) (CAP) model implementation of [Azure CosmosDB OData proxy](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim) integration. The cds service serves as proxy to the CloudFoundry destination and ultimately the OData services exposed by the .NET web api running in Azure, which collects data from [Azure CosmosDB](https://learn.microsoft.com/azure/cosmos-db/introduction). The SAPUI5 part of the application is identical to the non-cap implementation [here](https://github.com/MartinPankraz/SAPUI5-CosmosDB-umbrella).
 
 > **Warning**: comment the SAP Private Link in [mta.yaml](mta.yaml) in case you don't want use it.
 
