@@ -17,7 +17,7 @@ Additional Resources |
 From your IDE run `cds watch` (consider default-env.json when using CF destination)
 
 ## How to debug
-Create Run configuration on SAP BAS and execute or use process attach on VSC. I found [this](https://developers.sap.com/tutorials/appstudio-cap-app.html#61399eba-7ffb-4764-b8bd-4e6036c18e19) link useful. See also my [dedicated post](https://blogs.sap.com/2021/10/05/btp-private-linky-swear-with-azure-how-do-i-debug-and-test-with-live-data/) on the SAP Private Link series-
+Create Run configuration on SAP BAS and execute or use process attach on VSC. I found [this](https://developers.sap.com/tutorials/appstudio-cap-app.html#61399eba-7ffb-4764-b8bd-4e6036c18e19) link useful. See also my [dedicated post](https://blogs.sap.com/2021/10/05/btp-private-linky-swear-with-azure-how-do-i-debug-and-test-with-live-data/) on the SAP Private Link series.
 
 ## How to deploy
 Login with your CloudFoundry space, run
