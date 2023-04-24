@@ -7,6 +7,7 @@ modules:
   type: nodejs
   path: gen/srv
   requires:
+  - name: odata-proxy-pls
   - name: cap-cosmosdb-app-destination
   - name: cap-cosmosdb-app-uaa
   provides:
@@ -38,16 +39,28 @@ modules:
     - npm run build:cf
     supported-platforms: []
 resources:
-- name: cap-cosmosdb-app-destination
-  type: org.cloudfoundry.existing-service
+# PrivateLink Service
+- name: odata-proxy-pls
   parameters:
+    service: privatelink
+    service-name: odata-proxy-pls
+    service-plan: standard
+  type: org.cloudfoundry.managed-service
+# Destination service
+- name: cap-cosmosdb-app-destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
     service-name: cap-cosmosdb-app-destination
+    service-plan: lite
+# XSUAA service
 - name: cap-cosmosdb-app-uaa
   type: org.cloudfoundry.managed-service
   parameters:
     path: ./xs-security.json
     service: xsuaa
     service-plan: application
+# HTML5 service
 - name: cap-cosmosdb-app-repo-host
   type: org.cloudfoundry.managed-service
   parameters:
